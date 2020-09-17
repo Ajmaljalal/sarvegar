@@ -1,0 +1,48 @@
+.container{
+    margin-top: 100px;
+    padding-top: 0;
+    
+}
+.landing{
+    width: 100%;
+    height: 40vh;
+    padding-top: 15px;
+    border-radius: 10px;
+}
+
+.dashboad_btn{
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.profile-container{
+    border-bottom: 2px solid green;
+    padding: 0;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    
+}
+.profile-container h3{
+    margin-top: 0;
+    
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    max-width: 230px;
+}
+.profile img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+}
+
+.profile p{
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+
+}
+

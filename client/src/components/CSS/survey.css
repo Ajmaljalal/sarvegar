@@ -1,0 +1,20 @@
+.card{
+    background-color: #D5EEC1;
+}
+.card-title{
+    color: rgb(64, 99, 37);
+    font-weight: bolder;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.card-body{
+    padding: 0 20px;
+}
+
+.yesNo {
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 30px;
+}

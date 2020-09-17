@@ -1,0 +1,46 @@
+
+
+header {
+    padding:10px 0px;
+    transition: all 300ms ease-in;
+}
+
+header .header_logo {
+    color: white;
+}
+header .header_logo_venue {
+    font-size: 40px;
+    align-content: center;
+    text-align: center;
+    color: white;
+}
+
+.header_logo_venue a {
+    color: white;
+}
+
+header .header_logo_title {
+    text-transform: uppercase;
+}
+
+.header_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.header_buttons a{
+    color: yellow;
+}
+
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+@media only screen and (max-width: 500px) {
+    .toolbar{
+        flex-direction: column;
+    }
+}
