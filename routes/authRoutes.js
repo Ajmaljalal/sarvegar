@@ -1,21 +1,18 @@
 const passport = require('passport');
 
 module.exports = (app) => {
-
-    
     app.use(
-        '/auth/google/start',  
+        '/auth/google/start',
         passport.authenticate('google', {
             scope: ['profile', 'email']
-        }) 
-        
+        }),
     );
-    
+
     app.use(
-        '/auth/google/callback', 
+        '/auth/google/callback',
         passport.authenticate('google'),
         (req, res) => {
-            res.redirect('/dashboard');
+            res.redirect('/dashboard')
         }
     );
 
@@ -24,7 +21,7 @@ module.exports = (app) => {
         res.redirect('/');
     });
 
-    app.use('/api/current_user', (req, res)=>{
+    app.use('/api/current_user', (req, res) => {
         res.send(req.user);
     })
 }

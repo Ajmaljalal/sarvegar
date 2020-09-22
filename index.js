@@ -10,7 +10,9 @@ require('./services/passport');
 
 
 //Database Connection
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, () => {
+    console.log('db connected')
+});
 
 const app = express();
 
@@ -33,14 +35,14 @@ require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
 
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     // serve the static files
     app.use(express.static('client/build'));
 
 
     // server index.html if the rout is not recognized
     const path = require('path');
-    app.get('*', (req, res)=>{
+    app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }

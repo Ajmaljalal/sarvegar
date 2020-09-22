@@ -30,7 +30,8 @@
 .profile{
     display: flex;
     justify-content: space-between;
-    max-width: 230px;
+    align-items: center;
+    max-width: 240px;
 }
 .profile img{
     width: 70px;
@@ -42,7 +43,5 @@
 .profile p{
     margin: 0;
     padding: 0;
-    padding-top: 10px;
-
 }
 

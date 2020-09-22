@@ -79,61 +79,62 @@ import SideDrawer from './SideDrawer';
 
 class Header extends Component {
 
-    renderHeader = () => {
-      switch (this.props.auth) {
-        case null:
-          return "Loading..."
+  renderHeader = () => {
+    const { auth } = this.props
+    switch (auth) {
+      case null:
+        return "Loading..."
         case false:
           return <li><a href="/auth/google/start">Login with Google</a></li>
         default:
+            const userCredets = auth.credits < 0 ? 0 : auth.credits
           return [
-            <li key= '1'><Payments /></li>,
-            <li key = '3' style = {{margin: '0 10px'}}>
-              Credits: {this.props.auth.credits > 0 ? this.props.auth.credits: 0}
+            <li key='1'><Payments /></li>,
+            <li key='3' style={{ margin: '0 10px' }}>
+              Credits: {userCredets}
             </li>,
-            <li key = '2'><a href = '/api/logout'>Logout</a></li>
+            <li key='2'><a href='/api/logout'>Logout</a></li>
           ];
       }
-    }
+  }
 
 
-    render() {
-        return (
-            <div>
-                <AppBar
-                    position = 'fixed'
-                    style = {{
-                        backgroundColor: '#214B00',
-                        boxShadow: 'none',
-                        padding: '10px 0'
-                    }}
+  render() {
+    return (
+      <div>
+        <AppBar
+          position='fixed'
+          style={{
+            backgroundColor: '#214B00',
+            boxShadow: 'none',
+            padding: '10px 0'
+          }}
+        >
+          <Toolbar className='toolbar'>
+            <div className='header_logo'>
+              <div className='font_righteous header_logo_venue'>
+                <Link
+                  to={this.props.auth ? '/dashboard' : '/'}
+                  className="brand-logo"
                 >
-                
-                    <Toolbar className = 'toolbar'>
-                        <div className='header_logo'>
-                            <div className='font_righteous header_logo_venue'>
-                                <Link 
-                                    to = {this.props.auth ? '/dashboard' : '/'} 
-                                    className="brand-logo"
-                                    >
-                                    Sarvegar
-                                </Link>
-                            </div>
-                        </div>
-                        <div>
-                            <ul className='header_buttons'>
-                                {this.renderHeader()}
-                            </ul>
-                        </div>
-                    </Toolbar>
-                </AppBar>
+                  Sarvegar
+                </Link>
+              </div>
             </div>
-        )
-    }
+            <div>
+              <ul className='header_buttons'>
+                {this.renderHeader()}
+              </ul>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+    )
+  }
 }
 
-const mapStateToProps = ({auth}) => {
-  return ({auth})
+const mapStateToProps = ({ auth }) => {
+  return ({ auth })
 }
 
 
