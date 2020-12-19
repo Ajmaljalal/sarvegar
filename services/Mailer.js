@@ -15,8 +15,6 @@ class Mailer extends helper.Mail{
         this.addContent(this.body);
         this.addClickTracking();
         this.addRecipients();
-
-
     }
 
     formatAddresses(recipients){
